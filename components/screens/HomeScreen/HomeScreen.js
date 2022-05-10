@@ -1,13 +1,16 @@
 import * as React from 'react';
 import { Button, View, Text } from 'react-native';
 
-function HomeScreen() {
+function HomeScreen({navigation}) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>HomeScreenpage</Text>
+      <Text>HomeScreen page</Text>
       <Button
         title="See details"
-        onPress={() => navigation.navigate('Details')}
+        onPress={() => navigation.navigate('Details', {
+          itemId: 86,
+          otherParam: 'anything you want here',
+        })}
       />
     </View>
   );

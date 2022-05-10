@@ -4,6 +4,7 @@ import { Button, View, Text } from 'react-native';
 function DetailsScreen({ route, navigation }) {
   /* 2. Get the param */
   const { itemId, otherParam } = route.params;
+  console.log(route)
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Details Screen</Text>
@@ -12,7 +13,7 @@ function DetailsScreen({ route, navigation }) {
       <Button
         title="Go to Details... again"
         onPress={() =>
-          navigation.push('Details', {
+          navigation.navigate('Details', {
             itemId: Math.floor(Math.random() * 100),
           })
         }
